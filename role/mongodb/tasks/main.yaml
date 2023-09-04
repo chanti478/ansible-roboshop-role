@@ -3,7 +3,7 @@
     src: mongodb.repo
     dest: /etc/yum.repos.d/mongo.repo
 
-- name: Install MongoDB
+"- name: Install MongoDB
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
@@ -17,7 +17,8 @@
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
+
 - name: restart mongodb
   ansible.builtin.service:
     name: mongod
-    state: restarted
+    state: restarted"
